@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Main page -->
+    <url>
+        <loc>https://bt.kodesoft.net/</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://bt.kodesoft.net/?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bt.kodesoft.net/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://bt.kodesoft.net/?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bt.kodesoft.net/?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bt.kodesoft.net/"/>
+    </url>
+    
+    <!-- Help page -->
+    <url>
+        <loc>https://bt.kodesoft.net/help.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://bt.kodesoft.net/help.html?lang=de"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bt.kodesoft.net/help.html?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://bt.kodesoft.net/help.html?lang=es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://bt.kodesoft.net/help.html?lang=fr"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bt.kodesoft.net/help.html"/>
+    </url>
+    
+    <!-- PWA Manifest -->
+    <url>
+        <loc>https://bt.kodesoft.net/manifest.json</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
