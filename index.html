@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+    content="German Spelling Alphabet according to DIN 5009:2022. Convert words to their phonetic spelling instantly.">
+<meta name="keywords"
+    content="Buchstabiertafel, DIN 5009, Spelling Alphabet, German, Phonetic, Buchstabieralphabet, NATO, Funkalphabet">
+<meta name="author" content="Buchstabiertafel App">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2563eb">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buchstabiertafel.de/">
+<meta property="og:title" content="DIN 5009 Buchstabiertafel - German Spelling Alphabet">
+<meta property="og:description"
+    content="Convert words to their German phonetic spelling according to DIN 5009:2022. Free, fast, and offline-capable.">
+<meta property="og:image" content="https://buchstabiertafel.de/icon-512.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://buchstabiertafel.de/">
+<meta property="twitter:title" content="DIN 5009 Buchstabiertafel - German Spelling Alphabet">
+<meta property="twitter:description"
+    content="Convert words to their German phonetic spelling according to DIN 5009:2022. Free, fast, and offline-capable.">
+<meta property="twitter:image" content="https://buchstabiertafel.de/icon-512.png">
+
+<link rel="canonical" href="https://buchstabiertafel.de/">
+<title>DIN 5009 Buchstabiertafel</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <div class="container">
+            <header class="app-header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1 data-translate="title">DIN 5009 Buchstabiertafel</h1>
+                        <p class="subtitle" data-translate="subtitle">Deutsches Buchstabieralphabet nach DIN 5009:2022
+                        </p>
+                    </div>
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-select">
+                            <option value="de">DE</option>
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <main class="app-main">
+                <div class="input-container">
+                    <input type="text" id="inputWord" data-translate-placeholder="placeholder"
+                        placeholder="Wort eingeben..." autocomplete="off" spellcheck="false">
+                </div>
+
+                <div class="copy-url-container" id="copyUrlContainer" style="display: none;">
+                    <button id="copyUrlBtn" class="copy-url-btn">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text" data-translate="copyUrl">URL kopieren</span>
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table id="spellingTable">
+                        <thead>
+                            <tr>
+                                <th data-translate="tableLetter">Buchstabe</th>
+                                <th data-translate="tableCodeWord">Codewort</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr class="empty-row">
+                                <td colspan="3" data-translate="emptyState">Geben Sie ein Wort ein, um die
+                                    Buchstabierung zu sehen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <footer class="app-footer">
+                <div class="footer-content">
+                    <span class="footer-text">Version 1.0.0</span>
+                    <span class="footer-separator">·</span>
+                    <span class="footer-text">DIN 5009:2022</span>
+                    <span class="footer-separator">·</span>
+                    <a href="help.html" class="footer-link" data-translate="helpLink">Hilfe</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

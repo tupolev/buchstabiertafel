@@ -1,0 +1,36 @@
+services:
+  buchstabiertafel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: buchstabiertafel
+    ports:
+      - "8080:80"
+      - "8443:443"
+    restart: unless-stopped
+    volumes:
+      # Mount project files from host
+      - ./index.html:/usr/share/caddy/index.html:ro
+      - ./help.html:/usr/share/caddy/help.html:ro
+      - ./styles.css:/usr/share/caddy/styles.css:ro
+      - ./script.js:/usr/share/caddy/script.js:ro
+      - ./din5009.json:/usr/share/caddy/din5009.json:ro
+      - ./translations.json:/usr/share/caddy/translations.json:ro
+      - ./manifest.json:/usr/share/caddy/manifest.json:ro
+      - ./service-worker.js:/usr/share/caddy/service-worker.js:ro
+      # Mount icons (optional - create these files for full PWA support)
+      - ./favicon.png:/usr/share/caddy/favicon.png:ro
+      - ./icon-48.png:/usr/share/caddy/icon-48.png:ro
+      - ./icon-72.png:/usr/share/caddy/icon-72.png:ro
+      - ./icon-96.png:/usr/share/caddy/icon-96.png:ro
+      - ./icon-144.png:/usr/share/caddy/icon-144.png:ro
+      - ./icon-192.png:/usr/share/caddy/icon-192.png:ro
+      - ./icon-512.png:/usr/share/caddy/icon-512.png:ro
+      # Mount Caddyfile
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - buchstabiertafel-network
+
+networks:
+  buchstabiertafel-network:
+    driver: bridge

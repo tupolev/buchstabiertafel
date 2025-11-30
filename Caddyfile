@@ -1,0 +1,66 @@
+# Redirect HTTP to HTTPS
+:80 {
+    redir https://{host}{uri} permanent
+}
+
+# HTTPS configuration
+bt.local:443, localhost:443 {
+    root * /usr/share/caddy
+    file_server
+    
+    # Enable automatic HTTPS with local CA for development
+    tls internal
+    
+    # Enable gzip compression
+    encode gzip
+    
+    # Set proper MIME types
+    header {
+        # Security headers
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+        # Force HTTPS
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    }
+    
+    # Handle JSON files with proper content type
+    @json {
+        path *.json
+    }
+    header @json Content-Type application/json
+    
+    # Handle manifest.json
+    @manifest {
+        path /manifest.json
+    }
+    header @manifest Content-Type application/manifest+json
+    
+    # Handle service worker
+    @sw {
+        path /service-worker.js
+    }
+    header @sw Content-Type application/javascript
+    header @sw Service-Worker-Allowed "/"
+    
+    # Cache icons and manifest
+    @pwa-assets {
+        path *.png manifest.json
+    }
+    header @pwa-assets Cache-Control "public, max-age=31536000, immutable"
+    
+    # Don't cache HTML, JS, or CSS files (for development)
+    # Exclude service-worker.js from no-cache
+    @no-cache {
+        path *.html *.css *.js
+        not path /service-worker.js
+    }
+    header @no-cache Cache-Control "no-cache, no-store, must-revalidate"
+    
+    # Logging
+    log {
+        output stdout
+        format console
+    }
+}
+
